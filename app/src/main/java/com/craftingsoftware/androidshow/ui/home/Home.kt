@@ -29,7 +29,7 @@ class Home : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
 
-        increment.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_home_to_users, null))
+        increment.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_home_to_movies, null))
 
         val countObserver = Observer<Int> {
             message.text = it.toString()
