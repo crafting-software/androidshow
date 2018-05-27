@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import com.craftingsoftware.androidshow.R
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -29,7 +28,7 @@ class Home : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
 
-        increment.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_home_to_movies, null))
+        increment.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_home_to_users, null))
 
         val countObserver = Observer<Int> {
             message.text = it.toString()

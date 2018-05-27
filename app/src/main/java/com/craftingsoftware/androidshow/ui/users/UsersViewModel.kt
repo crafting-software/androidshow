@@ -1,5 +1,7 @@
 package com.craftingsoftware.androidshow.ui.users
 
+import android.arch.lifecycle.LiveData
+import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 
 /**
@@ -8,5 +10,20 @@ import android.arch.lifecycle.ViewModel
  */
 class UsersViewModel : ViewModel() {
 
+    private val users: MutableLiveData<List<User>> = MutableLiveData()
+
+    init {
+        users.value = listOf(
+                User(firstName = "Ananas", lastName = "Curatatoru"),
+                User(firstName = "Dino", lastName = "Tractoru")
+        )
+    }
+
+    fun getUsers(): LiveData<List<User>> = users
+
     // Paul do the magic
 }
+
+data class User(
+        val firstName: String,
+        val lastName: String)
