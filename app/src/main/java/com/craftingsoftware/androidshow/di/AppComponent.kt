@@ -1,6 +1,7 @@
 package com.craftingsoftware.androidshow.di
 
 import android.app.Application
+import com.craftingsoftware.androidshow.ui.github.GithubUsersViewModel
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -20,4 +21,7 @@ interface AppComponent {
 
         fun build(): AppComponent
     }
+
+    fun inject(githubUsersViewModel: GithubUsersViewModel)
+
 }

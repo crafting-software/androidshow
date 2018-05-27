@@ -3,6 +3,7 @@ package com.craftingsoftware.androidshow
 import android.app.Application
 import com.craftingsoftware.androidshow.di.AppComponent
 import com.craftingsoftware.androidshow.di.DaggerAppComponent
+import timber.log.Timber
 
 /**
  * Created by constantin.cheptea
@@ -11,6 +12,9 @@ import com.craftingsoftware.androidshow.di.DaggerAppComponent
 class AndroidShowApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+
+        Timber.plant(Timber.DebugTree())
+
         appComponent = DaggerAppComponent.builder()
                 .application(this)
                 .build()

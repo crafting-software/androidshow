@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndroidShow</string>
+    <string name="github_users_example">Github users example</string>
+    <string name="local_users_example">Local users example</string>
 </resources>

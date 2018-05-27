@@ -8,6 +8,7 @@
         android:id="@+id/home"
         android:name="com.craftingsoftware.androidshow.ui.home.Home"
         android:label="home_fragment"
+
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_home_to_users"
@@ -15,8 +16,8 @@
             app:enterAnim="@anim/nav_default_pop_enter_anim"
             app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
-            android:id="@+id/action_home_to_movies"
-            app:destination="@id/movies"
+            android:id="@+id/action_home_to_github_users"
+            app:destination="@id/github_users"
             app:enterAnim="@anim/nav_default_pop_enter_anim"
             app:exitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
@@ -26,8 +27,8 @@
         android:label="Users"
         tools:layout="@layout/fragment_users" />
     <fragment
-        android:id="@+id/movies"
-        android:name="com.craftingsoftware.androidshow.ui.movies.Movies"
+        android:id="@+id/github_users"
+        android:name="com.craftingsoftware.androidshow.ui.github.GithubUsers"
         android:label="Users"
         tools:layout="@layout/fragment_users"/>
 </navigation>
