@@ -8,26 +8,31 @@
         android:id="@+id/home"
         android:name="com.craftingsoftware.androidshow.ui.home.Home"
         android:label="home_fragment"
+
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_home_to_users"
             app:destination="@id/users"
-            app:enterAnim="@anim/nav_default_pop_enter_anim"
-            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+            app:enterAnim="@anim/nav_slide_in_from_right"
+            app:exitAnim="@anim/nav_slide_out_to_left"
+            app:popEnterAnim="@anim/nav_slide_in_from_left"
+            app:popExitAnim="@anim/nav_slide_out_to_right" />
         <action
-            android:id="@+id/action_home_to_movies"
-            app:destination="@id/movies"
-            app:enterAnim="@anim/nav_default_pop_enter_anim"
-            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+            android:id="@+id/action_home_to_github_users"
+            app:destination="@id/github_users"
+            app:enterAnim="@anim/nav_slide_in_from_right"
+            app:exitAnim="@anim/nav_slide_out_to_left"
+            app:popEnterAnim="@anim/nav_slide_in_from_left"
+            app:popExitAnim="@anim/nav_slide_out_to_right" />
     </fragment>
     <fragment
         android:id="@+id/users"
         android:name="com.craftingsoftware.androidshow.ui.users.Users"
         android:label="Users"
-        tools:layout="@layout/fragment_users" />
+        tools:layout="@layout/fragment_local_users" />
     <fragment
-        android:id="@+id/movies"
-        android:name="com.craftingsoftware.androidshow.ui.movies.Movies"
+        android:id="@+id/github_users"
+        android:name="com.craftingsoftware.androidshow.ui.github.GithubUsers"
         android:label="Users"
-        tools:layout="@layout/fragment_users"/>
+        tools:layout="@layout/fragment_local_users"/>
 </navigation>
