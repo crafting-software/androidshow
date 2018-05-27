@@ -22,7 +22,9 @@ class Home : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
 
+        localUsersButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_home_to_users, null))
         githubUsersButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_home_to_github_users, null))
+
     }
 
 }

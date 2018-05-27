@@ -10,23 +10,23 @@ import com.bumptech.glide.Glide
 import com.craftingsoftware.androidshow.R
 import com.craftingsoftware.androidshow.api.model.GithubUser
 
-class GithubUsersAdapter(private val githubUsers: List<GithubUser>) : RecyclerView.Adapter<GithubUsersAdapter.MovieViewHolder>() {
+class GithubUsersAdapter(private val githubUsers: List<GithubUser>) : RecyclerView.Adapter<GithubUsersAdapter.GithubUserViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder = LayoutInflater
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GithubUserViewHolder = LayoutInflater
             .from(parent.context)
             .inflate(R.layout.item_github_user, parent, false)
-            .let { MovieViewHolder(it) }
+            .let { GithubUserViewHolder(it) }
 
     override fun getItemCount(): Int = githubUsers.size
 
-    override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: GithubUserViewHolder, position: Int) {
         holder.username.text = githubUsers[position].username
         Glide.with(holder.view.context)
                 .load(githubUsers[position].avatarUrl)
                 .into(holder.avatarView)
     }
 
-    inner class MovieViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+    inner class GithubUserViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val username: TextView = view.findViewById(R.id.username)
         val avatarView: ImageView = view.findViewById(R.id.avatar)
     }

@@ -8,21 +8,20 @@ import android.widget.TextView
 import com.craftingsoftware.androidshow.R
 import com.craftingsoftware.androidshow.ui.users.User
 
-class UserListAdapter(private val users: List<User>) : RecyclerView.Adapter<UserListAdapter.UserViewHolder>() {
+class LocalUsersAdapter(private val users: List<User>) : RecyclerView.Adapter<LocalUsersAdapter.UserViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_user, parent, false)
-        return UserViewHolder(view)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder = LayoutInflater
+            .from(parent.context)
+            .inflate(R.layout.item_local_user, parent, false)
+            .let { UserViewHolder(it) }
 
     override fun getItemCount(): Int = users.size
 
-
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        val currentUser = users[position]
+        val user = users[position]
 
-        holder.userFirstName.text = currentUser.firstName
-        holder.userLastName.text = currentUser.lastName
+        holder.userFirstName.text = user.firstName
+        holder.userLastName.text = user.lastName
     }
 
     inner class UserViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
