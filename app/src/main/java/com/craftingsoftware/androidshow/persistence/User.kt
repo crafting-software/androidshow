@@ -8,14 +8,14 @@ import android.arch.persistence.room.PrimaryKey
  * Created by constantin.cheptea
  * on 22/05/2018.
  */
-@Entity
+@Entity(tableName = "user")
 data class User(
-        @PrimaryKey
-        private val uid: Int = 0,
+        @PrimaryKey(autoGenerate = true)
+        var uid: Int = 0,
 
         @ColumnInfo(name = "first_name")
-        private val firstName: String? = null,
+        var firstName: String? = null,
 
         @ColumnInfo(name = "last_name")
-        private val lastName: String? = null
+        var lastName: String? = null
 )

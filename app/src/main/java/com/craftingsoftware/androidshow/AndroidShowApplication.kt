@@ -3,6 +3,7 @@ package com.craftingsoftware.androidshow
 import android.app.Application
 import com.craftingsoftware.androidshow.di.AppComponent
 import com.craftingsoftware.androidshow.di.DaggerAppComponent
+import com.facebook.stetho.Stetho
 import timber.log.Timber
 
 /**
@@ -14,6 +15,7 @@ class AndroidShowApplication : Application() {
         super.onCreate()
 
         Timber.plant(Timber.DebugTree())
+        Stetho.initializeWithDefaults(this)
 
         appComponent = DaggerAppComponent.builder()
                 .application(this)

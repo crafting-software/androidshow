@@ -1,8 +1,7 @@
 package com.craftingsoftware.androidshow
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.craftingsoftware.androidshow.ui.home.Home
+import android.support.v7.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 

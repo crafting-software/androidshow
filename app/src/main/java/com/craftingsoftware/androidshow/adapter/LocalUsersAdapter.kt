@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.craftingsoftware.androidshow.R
-import com.craftingsoftware.androidshow.ui.users.User
+import com.craftingsoftware.androidshow.persistence.User
 
 class LocalUsersAdapter(private val users: List<User>) : RecyclerView.Adapter<LocalUsersAdapter.UserViewHolder>() {
 
