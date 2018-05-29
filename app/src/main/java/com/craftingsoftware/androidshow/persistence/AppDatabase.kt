@@ -1,7 +1,7 @@
 package com.craftingsoftware.androidshow.persistence
 
-import android.arch.persistence.room.RoomDatabase
 import android.arch.persistence.room.Database
+import android.arch.persistence.room.RoomDatabase
 
 /**
  * Created by constantin.cheptea

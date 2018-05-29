@@ -4,7 +4,8 @@
     package="com.craftingsoftware.androidshow">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:name=".AndroidShowApplication"
         android:allowBackup="true"
@@ -22,6 +23,13 @@
             </intent-filter>
         </activity>
         <service android:name=".service.DateTimeService" />
+
+        <receiver android:name=".broadcast.CallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
