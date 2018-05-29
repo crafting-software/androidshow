@@ -1,15 +1,15 @@
 package com.craftingsoftware.androidshow.di
 
 import android.app.Application
-import dagger.Module
-import dagger.Provides
-import javax.inject.Singleton
-import com.craftingsoftware.androidshow.persistence.AppDatabase
 import android.arch.persistence.room.Room
 import com.craftingsoftware.androidshow.BuildConfig
 import com.craftingsoftware.androidshow.api.GithubApi
+import com.craftingsoftware.androidshow.persistence.AppDatabase
+import com.craftingsoftware.androidshow.persistence.UserDao
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import dagger.Module
+import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -17,7 +17,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import timber.log.Timber
-import java.time.LocalDateTime
+import javax.inject.Singleton
 
 
 /**
@@ -68,4 +68,8 @@ class AppModule {
     @Provides
     @Singleton
     fun githubApi(retrofit: Retrofit): GithubApi = retrofit.create(GithubApi::class.java)
+
+    @Provides
+    @Singleton
+    fun userDao(appDatabase: AppDatabase): UserDao = appDatabase.userDao()
 }
