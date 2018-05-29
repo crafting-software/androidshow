@@ -2,6 +2,7 @@
     <string name="app_name">AndroidShow</string>
     <string name="github_users_example">Github users example</string>
     <string name="local_users_example">Local users example</string>
+    <string name="start_time_notification">Start time notification</string>
     <string name="add_new_user">Add a user</string>
     <string name="add">Add</string>
     <string name="cancel">Cancel</string>
